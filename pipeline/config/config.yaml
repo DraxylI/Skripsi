@@ -1,0 +1,97 @@
+# Konfigurasi Eksperimen Pipeline Skripsi OULAD
+# Analisis Dampak Variasi Definisi Fitur terhadap Akurasi Model Prediksi Ketercapaian Belajar Siswa
+
+paths:
+  dataset_dir: "../dataset"
+  courses_file: "courses.csv"
+  student_info_file: "studentInfo.csv"
+  student_registration_file: "studentRegistration.csv"
+  student_vle_file: "studentVle.csv"
+  assessments_file: "assessments.csv"
+  student_assessment_file: "studentAssessment.csv"
+  vle_file: "vle.csv"
+  
+  outputs_dir: "outputs"
+  processed_dir: "outputs/processed"
+  models_dir: "outputs/models"
+  predictions_dir: "outputs/predictions"
+  tables_dir: "outputs/tables"
+  figures_dir: "outputs/figures"
+
+cutoff:
+  ratio: 0.5  # Hari ke-0 sampai 50% panjang presentasi modul
+  week_days: 7.0
+
+cohort:
+  # Urutan kronologis presentasi untuk seleksi percobaan pertama (First Attempt)
+  presentation_order:
+    "2013B": 1
+    "2013J": 2
+    "2014B": 3
+    "2014J": 4
+
+modeling:
+  random_state: 42
+  n_splits: 10
+  penalty: "l2"
+  max_iter: 1000
+  solver: "lbfgs"
+  C: 1.0
+
+modules:
+  all:
+    - "AAA"
+    - "BBB"
+    - "CCC"
+    - "DDD"
+    - "EEE"
+    - "FFF"
+    - "GGG"
+  ggg_omit_concepts:
+    - "B"
+
+configurations:
+  # Konfigurasi standar untuk modul AAA s.d. FFF
+  standard:
+    K0: ["A1", "B1", "C1"]  # Acuan
+    K1: ["A2", "B1", "C1"]  # Variasi Aktivitas VLE (A2)
+    K2: ["A3", "B1", "C1"]  # Variasi Aktivitas VLE (A3)
+    K3: ["A1", "B2", "C1"]  # Variasi Skor (B2)
+    K4: ["A1", "B3", "C1"]  # Variasi Skor (B3)
+    K5: ["A1", "B1", "C2"]  # Variasi Penyelesaian (C2)
+
+  # Konfigurasi khusus modul GGG (tanpa konsep skor B)
+  ggg:
+    K0: ["A1", "C1"]        # Acuan
+    K1: ["A2", "C1"]        # Variasi Aktivitas VLE (A2)
+    K2: ["A3", "C1"]        # Variasi Aktivitas VLE (A3)
+    K5: ["A1", "C2"]        # Variasi Penyelesaian (C2)
+
+concept_mapping:
+  K1: "Aktivitas VLE"
+  K2: "Aktivitas VLE"
+  K3: "Skor penilaian berjalan"
+  K4: "Skor penilaian berjalan"
+  K5: "Penyelesaian penilaian"
+
+
+# Analisis sensitivitas atas keputusan rekonstruksi (tidak mengubah hasil utama)
+sensitivity_analysis:
+  c2_tenggat_sampai_cutoff:
+    deskripsi: "C2 dihitung hanya dari penilaian bertenggat sampai batas waktu (himpunan penilaian yang sama dengan C1)"
+    varian_utama: "C2"
+    varian_sensitivitas: "C2_due"
+    standard:
+      K0: ["A1", "B1", "C1"]
+      K5: ["A1", "B1", "C2"]
+      K5_sens: ["A1", "B1", "C2_due"]
+    ggg:
+      K0: ["A1", "C1"]
+      K5: ["A1", "C2"]
+      K5_sens: ["A1", "C2_due"]
+
+# Uji ketahanan alat ukur: model kedua dijalankan pada sampel, fold, seed, dan konfigurasi K0-K5 yang sama.
+# Regresi logistik tetap alat ukur utama dan satu-satunya dasar status sensitif/stabil.
+robustness_model:
+  model_type: "random_forest"   # parameter bawaan scikit-learn, tanpa penyetelan
+  label: "Random Forest"

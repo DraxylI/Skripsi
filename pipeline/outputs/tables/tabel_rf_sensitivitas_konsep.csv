@@ -1,0 +1,8 @@
+code_module,sensitivitas_aktivitas_vle,sensitivitas_skor_penilaian,sensitivitas_penyelesaian_penilaian,se_acuan,baseline_zeror,acuan_melampaui_baseline
+AAA,Sensitif,Stabil,Stabil,0.0222,0.8022,False
+BBB,Sensitif,Sensitif,Sensitif,0.0034,0.6938,True
+CCC,Stabil,Sensitif,Sensitif,0.0101,0.6258,True
+DDD,Stabil,Sensitif,Stabil,0.0086,0.6158,True
+EEE,Stabil,Sensitif,Sensitif,0.0093,0.7668,True
+FFF,Stabil,Sensitif,Stabil,0.0074,0.6714,True
+GGG,Sensitif,Tidak Diuji,Sensitif,0.0098,0.7314,False

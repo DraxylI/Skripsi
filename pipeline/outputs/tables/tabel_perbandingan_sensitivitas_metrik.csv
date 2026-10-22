@@ -1,0 +1,6 @@
+metrik,Aktivitas VLE_sensitif,Aktivitas VLE_diuji,Aktivitas VLE_modul_sensitif,Skor penilaian berjalan_sensitif,Skor penilaian berjalan_diuji,Skor penilaian berjalan_modul_sensitif,Penyelesaian penilaian_sensitif,Penyelesaian penilaian_diuji,Penyelesaian penilaian_modul_sensitif
+Akurasi,2,7,"BBB,DDD",5,6,"AAA,BBB,CCC,DDD,FFF",5,7,"BBB,DDD,EEE,FFF,GGG"
+Presisi,1,7,DDD,2,6,"CCC,DDD",4,7,"BBB,DDD,EEE,FFF"
+Recall,5,7,"BBB,CCC,DDD,EEE,FFF",5,6,"AAA,BBB,CCC,DDD,FFF",6,7,"AAA,BBB,DDD,EEE,FFF,GGG"
+F1,2,7,"BBB,DDD",5,6,"AAA,BBB,CCC,DDD,FFF",5,7,"BBB,DDD,EEE,FFF,GGG"
+AUC-ROC,2,7,"BBB,FFF",4,6,"BBB,CCC,DDD,FFF",6,7,"AAA,BBB,DDD,EEE,FFF,GGG"

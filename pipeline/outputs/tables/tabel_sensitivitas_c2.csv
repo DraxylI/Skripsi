@@ -1,0 +1,8 @@
+code_module,sampel_sensitivitas,dikeluarkan_varian_tak_terdefinisi,akurasi_K0,se_K0,selisih_akurasi_C2,rasio_delta_se_C2,status_1_se_C2,selisih_recall_C2,selisih_akurasi_C2_due,rasio_delta_se_C2_due,status_1_se_C2_due,selisih_recall_C2_due,status_sama
+AAA,637,0,0.8273,0.0125,0.0046,0.37,Tidak Bermakna,-0.0487,0.0046,0.37,Tidak Bermakna,-0.0487,True
+BBB,5299,1,0.7767,0.003,-0.0442,14.66,Bermakna,-0.1855,-0.044,14.6,Bermakna,-0.1842,True
+CCC,2600,0,0.7827,0.0087,-0.0012,0.13,Tidak Bermakna,-0.001,-0.0012,0.13,Tidak Bermakna,-0.001,True
+DDD,4060,0,0.7847,0.0051,-0.0167,3.31,Bermakna,-0.0282,-0.0167,3.31,Bermakna,-0.0282,True
+EEE,2123,0,0.8304,0.0061,-0.0236,3.88,Bermakna,-0.1356,-0.0236,3.88,Bermakna,-0.1356,True
+FFF,5301,0,0.8083,0.0067,-0.037,5.53,Bermakna,-0.0936,-0.0351,5.24,Bermakna,-0.0861,True
+GGG,2044,4,0.7882,0.0097,-0.0416,4.3,Bermakna,-0.3418,-0.0489,5.06,Bermakna,-0.3857,True
