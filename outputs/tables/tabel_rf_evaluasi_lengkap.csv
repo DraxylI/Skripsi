@@ -1,0 +1,41 @@
+code_module,konfigurasi,konsep_diuji,fitur_masukan,rata_akurasi,std_akurasi,standard_error,se_acuan,selisih_delta,abs_delta,rasio_delta_se,status_1_se,baseline_zeror
+AAA,K0,Acuan,A1+B1+C1,0.8132,0.0701,0.0222,0.0222,0.0,0.0,0.0,Acuan,0.8022
+AAA,K1,Aktivitas VLE,A2+B1+C1,0.8132,0.0701,0.0222,0.0222,0.0,0.0,0.0,Tidak Bermakna,0.8022
+AAA,K2,Aktivitas VLE,A3+B1+C1,0.7897,0.0522,0.0165,0.0222,-0.0236,0.0236,1.06,Bermakna,0.8022
+AAA,K3,Skor penilaian berjalan,A1+B2+C1,0.8227,0.0482,0.0153,0.0222,0.0094,0.0094,0.43,Tidak Bermakna,0.8022
+AAA,K4,Skor penilaian berjalan,A1+B3+C1,0.793,0.0427,0.0135,0.0222,-0.0203,0.0203,0.91,Tidak Bermakna,0.8022
+AAA,K5,Penyelesaian penilaian,A1+B1+C2,0.8006,0.058,0.0184,0.0222,-0.0126,0.0126,0.57,Tidak Bermakna,0.8022
+BBB,K0,Acuan,A1+B1+C1,0.7691,0.0106,0.0034,0.0034,0.0,0.0,0.0,Acuan,0.6938
+BBB,K1,Aktivitas VLE,A2+B1+C1,0.7681,0.0105,0.0033,0.0034,-0.0009,0.0009,0.28,Tidak Bermakna,0.6938
+BBB,K2,Aktivitas VLE,A3+B1+C1,0.76,0.0162,0.0051,0.0034,-0.0091,0.0091,2.7,Bermakna,0.6938
+BBB,K3,Skor penilaian berjalan,A1+B2+C1,0.7568,0.0102,0.0032,0.0034,-0.0123,0.0123,3.66,Bermakna,0.6938
+BBB,K4,Skor penilaian berjalan,A1+B3+C1,0.7281,0.0161,0.0051,0.0034,-0.0409,0.0409,12.21,Bermakna,0.6938
+BBB,K5,Penyelesaian penilaian,A1+B1+C2,0.7451,0.0152,0.0048,0.0034,-0.024,0.024,7.14,Bermakna,0.6938
+CCC,K0,Acuan,A1+B1+C1,0.7562,0.0319,0.0101,0.0101,0.0,0.0,0.0,Acuan,0.6258
+CCC,K1,Aktivitas VLE,A2+B1+C1,0.7569,0.0226,0.0071,0.0101,0.0008,0.0008,0.08,Tidak Bermakna,0.6258
+CCC,K2,Aktivitas VLE,A3+B1+C1,0.7635,0.0345,0.0109,0.0101,0.0073,0.0073,0.72,Tidak Bermakna,0.6258
+CCC,K3,Skor penilaian berjalan,A1+B2+C1,0.7596,0.031,0.0098,0.0101,0.0035,0.0035,0.34,Tidak Bermakna,0.6258
+CCC,K4,Skor penilaian berjalan,A1+B3+C1,0.6862,0.0254,0.008,0.0101,-0.07,0.07,6.94,Bermakna,0.6258
+CCC,K5,Penyelesaian penilaian,A1+B1+C2,0.7681,0.0268,0.0085,0.0101,0.0119,0.0119,1.18,Bermakna,0.6258
+DDD,K0,Acuan,A1+B1+C1,0.7663,0.0272,0.0086,0.0086,0.0,0.0,0.0,Acuan,0.6158
+DDD,K1,Aktivitas VLE,A2+B1+C1,0.7695,0.0225,0.0071,0.0086,0.0032,0.0032,0.37,Tidak Bermakna,0.6158
+DDD,K2,Aktivitas VLE,A3+B1+C1,0.7695,0.0254,0.008,0.0086,0.0032,0.0032,0.37,Tidak Bermakna,0.6158
+DDD,K3,Skor penilaian berjalan,A1+B2+C1,0.7603,0.0209,0.0066,0.0086,-0.0059,0.0059,0.69,Tidak Bermakna,0.6158
+DDD,K4,Skor penilaian berjalan,A1+B3+C1,0.718,0.0274,0.0087,0.0086,-0.0483,0.0483,5.61,Bermakna,0.6158
+DDD,K5,Penyelesaian penilaian,A1+B1+C2,0.7667,0.0278,0.0088,0.0086,0.0005,0.0005,0.06,Tidak Bermakna,0.6158
+EEE,K0,Acuan,A1+B1+C1,0.8196,0.0295,0.0093,0.0093,0.0,0.0,0.0,Acuan,0.7668
+EEE,K1,Aktivitas VLE,A2+B1+C1,0.8153,0.035,0.0111,0.0093,-0.0042,0.0042,0.45,Tidak Bermakna,0.7668
+EEE,K2,Aktivitas VLE,A3+B1+C1,0.8182,0.0143,0.0045,0.0093,-0.0014,0.0014,0.15,Tidak Bermakna,0.7668
+EEE,K3,Skor penilaian berjalan,A1+B2+C1,0.8158,0.0192,0.0061,0.0093,-0.0037,0.0037,0.4,Tidak Bermakna,0.7668
+EEE,K4,Skor penilaian berjalan,A1+B3+C1,0.7998,0.0213,0.0067,0.0093,-0.0198,0.0198,2.12,Bermakna,0.7668
+EEE,K5,Penyelesaian penilaian,A1+B1+C2,0.8102,0.018,0.0057,0.0093,-0.0094,0.0094,1.01,Bermakna,0.7668
+FFF,K0,Acuan,A1+B1+C1,0.7829,0.0235,0.0074,0.0074,0.0,0.0,0.0,Acuan,0.6714
+FFF,K1,Aktivitas VLE,A2+B1+C1,0.781,0.0223,0.0071,0.0074,-0.0019,0.0019,0.25,Tidak Bermakna,0.6714
+FFF,K2,Aktivitas VLE,A3+B1+C1,0.7863,0.0259,0.0082,0.0074,0.0034,0.0034,0.46,Tidak Bermakna,0.6714
+FFF,K3,Skor penilaian berjalan,A1+B2+C1,0.7846,0.0135,0.0043,0.0074,0.0017,0.0017,0.23,Tidak Bermakna,0.6714
+FFF,K4,Skor penilaian berjalan,A1+B3+C1,0.7427,0.0195,0.0062,0.0074,-0.0402,0.0402,5.4,Bermakna,0.6714
+FFF,K5,Penyelesaian penilaian,A1+B1+C2,0.7857,0.0178,0.0056,0.0074,0.0028,0.0028,0.38,Tidak Bermakna,0.6714
+GGG,K0,Acuan,A1+C1,0.7378,0.0309,0.0098,0.0098,0.0,0.0,0.0,Acuan,0.7314
+GGG,K1,Aktivitas VLE,A2+C1,0.6977,0.04,0.0126,0.0098,-0.0401,0.0401,4.1,Bermakna,0.7314
+GGG,K2,Aktivitas VLE,A3+C1,0.7744,0.0425,0.0135,0.0098,0.0366,0.0366,3.74,Bermakna,0.7314
+GGG,K5,Penyelesaian penilaian,A1+C2,0.7216,0.0354,0.0112,0.0098,-0.0162,0.0162,1.65,Bermakna,0.7314

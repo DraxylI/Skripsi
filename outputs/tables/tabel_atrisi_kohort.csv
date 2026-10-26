@@ -1,0 +1,8 @@
+code_module,total_registrasi_awal,bukan_percobaan_pertama,setelah_percobaan_pertama,batal_sebelum_cutoff,kohort_dasar,tanpa_penilaian_lengkap,sampel_analisis_akhir,proporsi_berisiko_kohort_dasar,proporsi_berisiko_sampel_akhir,penurunan_proporsi_berisiko
+AAA,748,36,712,66,646,9,637,0.2074,0.1978,0.0096
+BBB,7909,217,7692,1946,5746,446,5300,0.359,0.3062,0.0528
+CCC,4434,183,4251,1503,2748,148,2600,0.4076,0.3742,0.0333
+DDD,6272,424,5848,1518,4330,270,4060,0.4201,0.3842,0.0359
+EEE,2934,75,2859,566,2293,170,2123,0.2896,0.2332,0.0564
+FFF,7762,365,7397,1805,5592,291,5301,0.3636,0.3286,0.0349
+GGG,2534,9,2525,200,2325,277,2048,0.3514,0.2686,0.0828
