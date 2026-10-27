@@ -1,0 +1,49 @@
+Dimensi,Kolom pada Lembar_Pengodean,Kode,Arti singkat,Pilih kode ini bila
+Konsep Fitur,Kode_Konsep,K1,Aktivitas di platform belajar,"Fitur berasal dari kegiatan mahasiswa di platform belajar daring, misalnya jumlah klik, jumlah hari aktif, atau jumlah sesi."
+Konsep Fitur,Kode_Konsep,K2,Nilai tugas atau ujian,Fitur berasal dari angka nilai tugas atau ujian yang sudah diperoleh mahasiswa.
+Konsep Fitur,Kode_Konsep,K3,Status atau waktu pengumpulan,"Fitur berasal dari dikumpulkan atau tidaknya tugas, atau kapan tugas dikumpulkan, bukan dari angka nilainya."
+Aturan keputusan,,Kode_Konsep sudah diisi peneliti utama. Pengode tidak mengubahnya. Daftar di atas hanya untuk dibaca.,,
+Pertanyaan pemandu,,Apakah artikel menyebut nama tabel OULAD yang dipakai untuk membuat fitur ini?,,
+Tabel Sumber,Kode_TabelSumber,T1,Hanya studentVle,Artikel menyebut nama tabel studentVle sebagai satu-satunya sumber fitur.
+Tabel Sumber,Kode_TabelSumber,T2,studentVle dan vle,"Artikel menyebut kedua nama tabel. Biasanya karena fitur memerlukan jenis aktivitas, misalnya klik pada kuis."
+Tabel Sumber,Kode_TabelSumber,T3,Hanya studentAssessment,Artikel menyebut nama tabel studentAssessment sebagai satu-satunya sumber fitur.
+Tabel Sumber,Kode_TabelSumber,T4,assessments dan studentAssessment,Artikel menyebut kedua nama tabel. Biasanya karena fitur memerlukan tenggat atau bobot tugas.
+Tabel Sumber,Kode_TabelSumber,T5,Gabungan tabel aktivitas dan penilaian,Artikel menyebut tabel aktivitas (studentVle atau vle) dan tabel penilaian (studentAssessment atau assessments) sekaligus untuk satu fitur.
+Tabel Sumber,Kode_TabelSumber,T8,Sumber disebut tanpa nama tabel,"Artikel hanya memakai istilah umum, misalnya clickstream data atau data e-learning."
+Tabel Sumber,Kode_TabelSumber,T9,Sumber tidak disebut,Artikel tidak menyebut sumber data fitur sama sekali. Nama tabel hanya bisa ditebak sendiri.
+Aturan keputusan,,"Lihat hanya nama tabel yang tertulis di artikel. Bila harus menebak sendiri tabel mana yang dipakai, pilih T8 atau T9, lalu tulis tebakan itu di Catatan_Pengode.",,
+Pertanyaan pemandu,,"Bisakah seorang pemrogram menulis kode penghitung fitur ini hanya dari penjelasan artikel, tanpa menentukan sendiri satu pun angka atau aturan?",,
+Formula Agregasi,Kode_FormulaAgregasi,F1,Dijelaskan lengkap,"Cara menghitung, data yang dihitung, dan cakupannya ditulis lengkap. Fitur bisa dihitung ulang tanpa menebak apa pun."
+Formula Agregasi,Kode_FormulaAgregasi,F2,Dijelaskan sebagian,"Cara menghitung bisa dikenali, misalnya dijumlah, tetapi ada yang tidak ditulis, seperti nilai batas, angka pembagi, atau jenis data yang dihitung."
+Formula Agregasi,Kode_FormulaAgregasi,F3,Tidak dijelaskan,Artikel hanya menyebut nama fitur atau menceritakannya secara umum. Cara menghitungnya tidak bisa dikenali.
+Aturan keputusan,,"Langkah 1. Apakah cara menghitungnya bisa dikenali? Bila tidak, pilih F3. Langkah 2. Bila bisa, masih adakah angka atau aturan yang harus ditentukan sendiri? Bila ada, pilih F2. Bila tidak ada, pilih F1. Rumus bernomor yang nilai di dalamnya tidak disebutkan tetap F2.",,
+Pertanyaan pemandu,,Data dari rentang waktu mana yang dipakai untuk menghitung fitur ini?,,
+Jendela Pengamatan,Kode_JendelaPengamatan,J1,Seluruh masa kuliah,Dihitung dari awal sampai akhir presentasi tanpa dipotong pada waktu tertentu.
+Jendela Pengamatan,Kode_JendelaPengamatan,J2,"Dipotong, persen dari panjang tiap mata kuliah",Data dipotong di beberapa titik waktu. Persentasenya dihitung dari panjang masing-masing mata kuliah yang berbeda-beda.
+Jendela Pengamatan,Kode_JendelaPengamatan,J3,"Dipotong, persen dari panjang yang diseragamkan","Semua mata kuliah dianggap sama panjang lebih dulu, misalnya 270 hari, lalu dipotong di beberapa persentase."
+Jendela Pengamatan,Kode_JendelaPengamatan,J4,Per hari,"Nilai dicatat per hari, tidak digabung antarhari, dan tidak ada titik pemotongan."
+Jendela Pengamatan,Kode_JendelaPengamatan,J5,Per minggu,Nilai dicatat per minggu dan tidak ada titik pemotongan.
+Jendela Pengamatan,Kode_JendelaPengamatan,J6,Dipisah sebelum dan sesudah kuliah dimulai,Data dibagi menjadi masa sebelum presentasi dimulai dan masa sesudahnya.
+Jendela Pengamatan,Kode_JendelaPengamatan,J8,Tidak dijelaskan,Artikel tidak menyebut rentang waktu data yang dipakai untuk menghitung fitur.
+Aturan keputusan,,"Langkah 1. Apakah data dipotong di beberapa titik waktu? Bila tidak, pilih di antara J1, J4, J5, J6, atau J8. Langkah 2. Bila ya, apakah panjang semua mata kuliah diseragamkan dulu? Bila ya, pilih J3. Bila tidak, pilih J2. Bila data dipotong dan juga dihitung per hari atau per minggu, kode tetap J2 atau J3, dan satuan waktunya ditulis di Catatan_Pengode.",,
+Pertanyaan pemandu,,"Apakah artikel menyebut bahwa skala angka fitur ini diubah, dan dengan cara apa?",,
+Normalisasi,Kode_Normalisasi,N1,Z-score,Angka dikurangi rata-rata lalu dibagi simpangan baku. Artikel sering menyebutnya standardization atau z-score.
+Normalisasi,Kode_Normalisasi,N2,Min-max,"Angka diubah ke rentang tertentu, biasanya nol sampai satu. Artikel sering menyebutnya min-max scaling."
+Normalisasi,Kode_Normalisasi,N3,Cara lain,"Artikel memakai cara lain, misalnya transformasi logaritma. Nama caranya ditulis di Catatan_Pengode."
+Normalisasi,Kode_Normalisasi,N4,Dinyatakan tidak dinormalisasi,Artikel menulis dengan jelas bahwa skala fitur tidak diubah.
+Normalisasi,Kode_Normalisasi,N8,Tidak dilaporkan,Artikel tidak menyebut apa pun tentang normalisasi fitur ini.
+Aturan keputusan,,"N4 dan N8 jangan tertukar. N4 hanya dipakai bila artikel menulis dengan jelas bahwa normalisasi tidak dilakukan. Artikel yang diam selalu N8. Bila artikel menyebut dari data mana rata-rata, simpangan baku, nilai minimum, atau nilai maksimum dihitung, tulis hal itu di Catatan_Pengode.",,
+Pertanyaan pemandu,,Apa yang dilakukan artikel terhadap data kosong pada fitur ini?,,
+Penanganan Nilai Kosong,Kode_NilaiKosong,V1,Dihapus,Baris atau kolom yang berisi data kosong dibuang.
+Penanganan Nilai Kosong,Kode_NilaiKosong,V2,Diisi rata-rata,Data kosong diganti nilai rata-rata (mean).
+Penanganan Nilai Kosong,Kode_NilaiKosong,V3,Diisi nilai tengah,Data kosong diganti nilai tengah (median).
+Penanganan Nilai Kosong,Kode_NilaiKosong,V4,Diisi nilai tersering,Data kosong diganti nilai yang paling sering muncul (modus).
+Penanganan Nilai Kosong,Kode_NilaiKosong,V5,Diisi angka tetap,"Data kosong diganti angka yang sama untuk semua, biasanya nol."
+Penanganan Nilai Kosong,Kode_NilaiKosong,V6,Campuran,Fitur pada baris ini sendiri mendapat lebih dari satu perlakuan.
+Penanganan Nilai Kosong,Kode_NilaiKosong,V8,Tidak dilaporkan,Artikel tidak menyebut cara menangani data kosong untuk fitur ini.
+Aturan keputusan,,"Lihat perlakuan untuk fitur pada baris ini saja, bukan seluruh artikel. Contoh, artikel menulis data angka yang kosong diisi rata-rata dan data kategori yang kosong diisi modus. Bila fitur pada baris ini berupa angka, kodenya V2, bukan V6.",,
+Pertanyaan pemandu,,Apakah artikel menjelaskan bahwa fitur hanya memakai data yang sudah tersedia pada saat prediksi dilakukan?,,
+Ketersediaan Temporal,Kode_KetersediaanTemporal,A1,Dijelaskan dengan jelas,"Artikel menulis bahwa data dibatasi sampai waktu prediksi, atau membandingkan hasil dengan dan tanpa pembatasan itu."
+Ketersediaan Temporal,Kode_KetersediaanTemporal,A2,"Ada waktu prediksi, pembatasan tidak dijelaskan","Artikel memprediksi pada waktu atau tahap tertentu, tetapi tidak menulis apakah data dan angka acuannya ikut dibatasi sampai waktu itu."
+Ketersediaan Temporal,Kode_KetersediaanTemporal,A3,Tidak ada waktu prediksi,Artikel tidak menetapkan waktu atau tahap prediksi sama sekali.
+Aturan keputusan,,"Langkah 1. Apakah artikel menetapkan waktu atau tahap prediksi? Bila tidak, pilih A3 dan berhenti. Langkah 2. Bila ya, apakah artikel menulis bahwa data dibatasi sampai waktu itu, atau membandingkan hasil dengan dan tanpa pembatasan? Bila tidak, pilih A2 dan berhenti. Langkah 3. Bila ya, pilih A1. Adanya prediksi dini saja belum cukup untuk A1.",,

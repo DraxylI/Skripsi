@@ -9,18 +9,24 @@ Detail metrik pelengkap: [`DOKUMENTASI_METRIK_PELENGKAP.md`](DOKUMENTASI_METRIK_
 ## 1. Persiapan
 
 ### Data
-Unduh OULAD (CC-BY 4.0) dari [OU Analyse](https://analyse.kmi.open.ac.uk/open_dataset) atau [UCI ML Repository](https://archive.ics.uci.edu/dataset/349), lalu ekstrak ke folder `dataset/` yang sejajar dengan folder repository ini (`../dataset/`, diatur di `config/config.yaml`). Dataset tidak ikut repository karena `studentVle.csv` berukuran ±433 MB.
+Repository ini menyertakan `dataset.zip` berisi tujuh tabel OULAD (±45 MB terkompresi, ±450 MB setelah diekstrak; lisensi dan atribusi di [bagian 7](#7-lisensi-dan-atribusi-data)). Ekstrak ke **folder induk** repository sehingga terbentuk `dataset/` yang sejajar dengan folder repository (`../dataset/`, diatur di `config/config.yaml`). Dari dalam folder repository:
+
+```powershell
+Expand-Archive -LiteralPath dataset.zip -DestinationPath ..
+```
 
 ```text
 <folder kerja>/
-├── dataset/      courses.csv, studentInfo.csv, studentRegistration.csv,
+├── dataset/      hasil ekstrak: courses.csv, studentInfo.csv, studentRegistration.csv,
 │                 assessments.csv, studentAssessment.csv, studentVle.csv, vle.csv
-└── pipeline/     (folder repository ini, nama folder bebas)
+└── Skripsi/      folder repository ini (nama folder bebas), berisi dataset.zip
 ```
+
+Jangan mengekstrak di dalam folder repository: pipeline tidak akan menemukan datanya. `dataset/` sudah tercantum di `.gitignore` sehingga tidak ikut ter-commit bila terlanjur diekstrak di sana. Dataset yang sama juga tersedia di [OU Analyse](https://analyse.kmi.open.ac.uk/open_dataset) dan [UCI ML Repository](https://archive.ics.uci.edu/dataset/349).
 
 ### Environment (Python 3.11)
 ```powershell
-cd pipeline
+cd Skripsi               # folder repository
 .\setup_env.ps1          # atau setup_env.bat di CMD
 .\.venv\Scripts\Activate.ps1
 ```
@@ -106,7 +112,7 @@ Modul GGG hanya menjalankan K0, K1, K2, K5 tanpa konsep B karena semua penilaian
 
 ## 4. Keluaran untuk Bab 4
 
-Semua tabel ada di `outputs/tables/`. Nilai berbentuk desimal 0–1; kalikan 100 untuk persen. Repository hanya menyertakan tabel CSV; `processed/`, `models/`, `predictions/`, dan `figures/` dibentuk ulang dengan `python run_pipeline.py all`.
+Semua tabel ada di `outputs/tables/`. Nilai berbentuk desimal 0–1; kalikan 100 untuk persen. Repository menyertakan `tables/`, `figures/`, `processed/`, dan `predictions/` dari run terakhir. `models/` (1.343 file `.joblib`) tidak disertakan dan dibentuk ulang dengan `python run_pipeline.py train` atau `python run_pipeline.py all`.
 
 | File | Isi |
 | :--- | :--- |
@@ -144,11 +150,42 @@ Grafik di `outputs/figures/`:
 
 ---
 
-## 5. Struktur Folder
+## 5. Dokumen Penelitian
+
+Folder `dokumen_penelitian/` memuat instrumen dan hasil pengodean definisi fitur pada enam penelitian terdahulu berbasis OULAD.
+
+| File | Isi | Naskah |
+| :--- | :--- | :--- |
+| `Lembar_Pengodean.xlsx` | Sheet `Keterangan`, `Kamus_Kode`, `Lembar_Pengodean`, dan `Rekap_Kappa` | Lampiran A |
+| `lembar_pengodean.csv` | Ekspor sheet `Lembar_Pengodean`: 48 baris × 21 kolom, yaitu 16 unit dari Pengode 1 dan 16 unit dari Pengode 2 pada putaran P1, ditambah 16 baris `Final` hasil adjudikasi | Lampiran A |
+| `kamus_kode.csv` | Ekspor sheet `Kamus_Kode`: kode tertutup setiap dimensi beserta pertanyaan pemandu dan aturan keputusan | Lampiran A |
+| `Pedoman_Pengodean.docx`, `Pedoman_Pengodean.pdf` | Aturan pengisian lembar pengodean untuk pengode dan peneliti utama | Lampiran B |
+
+GitHub tidak dapat menampilkan isi xlsx dan docx di browser, sehingga isi yang sama disediakan sebagai CSV dan PDF.
+
+Sheet `Rekap_Kappa` menghitung persen kesepakatan dan kappa Cohen per dimensi langsung dengan rumus Excel dari baris putaran P1, tanpa baris `Final`. Buka xlsx untuk memeriksa rumus dan angka yang dilaporkan di naskah (kappa Tabel Sumber 0,863, lima dimensi lain 1,000, lolos aturan ambang ganda). Angka yang sama dapat dihitung ulang dari `lembar_pengodean.csv` dengan memasangkan baris Pengode 1 dan Pengode 2 yang memiliki `ID_Pengodean` sama.
+
+Enam artikel yang dikode tercantum di bawah. PDF artikel tidak disertakan karena hak ciptanya dipegang penerbit.
+
+| Penelitian | Artikel | DOI |
+| :--- | :--- | :--- |
+| Althibyani (2024) | Predicting student success in MOOCs: a comprehensive analysis using machine learning models. *PeerJ Computer Science*, 10, e2221 | [10.7717/peerj-cs.2221](https://doi.org/10.7717/peerj-cs.2221) |
+| Balabied and Eid (2023) | Utilizing random forest algorithm for early detection of academic underperformance in open learning environments. *PeerJ Computer Science*, 9, e1708 | [10.7717/peerj-cs.1708](https://doi.org/10.7717/peerj-cs.1708) |
+| Masood et al. (2024) | A Hybrid Deep Learning Model to Predict High-Risk Students in Virtual Learning Environments. *IEEE Access*, 12, 103687–103703 | [10.1109/ACCESS.2024.3434644](https://doi.org/10.1109/ACCESS.2024.3434644) |
+| Qiu et al. (2022) | Predicting students' performance in e-learning using learning process and behaviour data. *Scientific Reports*, 12(1), 453 | [10.1038/s41598-021-03867-8](https://doi.org/10.1038/s41598-021-03867-8) |
+| Shou et al. (2024) | Predicting Student Performance in Online Learning: A Multidimensional Time-Series Data Analysis Approach. *Applied Sciences*, 14(6), 2522 | [10.3390/app14062522](https://doi.org/10.3390/app14062522) |
+| Wang (2025) | Artificial intelligence in student management systems to enhance academic performance monitoring and intervention. *Scientific Reports*, 15(1), 35122 | [10.1038/s41598-025-19159-4](https://doi.org/10.1038/s41598-025-19159-4) |
+
+---
+
+## 6. Struktur Folder
 
 ```text
-pipeline/
+Skripsi/
 ├── run_pipeline.py          CLI per tahap
+├── dataset.zip              OULAD, diekstrak ke ../dataset/
+├── dokumen_penelitian/      lembar dan pedoman pengodean (xlsx, docx, csv, pdf)
+├── LICENSE                  MIT untuk kode
 ├── config/config.yaml       path, cutoff, kohort, model, konfigurasi K0–K5
 ├── tests/                   unittest: metrics, cohort, extractor, builder, explorer
 ├── src/
@@ -157,5 +194,13 @@ pipeline/
 │   ├── models/              trainer.py (CV + metrik per fold), predictor.py (out-of-fold)
 │   ├── evaluation/          metrics.py (1-SE + status), reporter.py (CSV), register.py (R01–R22)
 │   └── visualization/       plots.py
-└── outputs/                 processed/, models/, predictions/, tables/, figures/
+└── outputs/                 processed/, predictions/, tables/, figures/ (models/ dibentuk saat run, tidak di-commit)
 ```
+
+---
+
+## 7. Lisensi dan Atribusi Data
+
+- Kode berlisensi MIT, lihat [`LICENSE`](LICENSE).
+- Isi `dokumen_penelitian/` berlisensi [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/), kecuali kutipan verbatim dari artikel sumber yang hak ciptanya tetap milik penerbit masing-masing. Kutipan tersebut dimuat untuk keperluan penelitian dengan sumber disebutkan (UU No. 28 Tahun 2014 tentang Hak Cipta, Pasal 44).
+- `dataset.zip` berisi Open University Learning Analytics Dataset (OULAD) berlisensi [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/). Isinya sama sel demi sel dengan rilis OULAD di UCI ML Repository, kecuali penanda nilai kosong: rilis UCI memakai `?`, sedangkan berkas di sini memakai sel kosong. Tidak ada nilai yang diubah. Sumber: Kuzilek, J., Hlosta, M. and Zdrahal, Z., 2017. Open University Learning Analytics dataset. *Scientific Data*, 4, 170171. [https://doi.org/10.1038/sdata.2017.171](https://doi.org/10.1038/sdata.2017.171).
